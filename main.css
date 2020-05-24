@@ -37,13 +37,17 @@ body {
 
 .toDoInput input,
  input::placeholder,
-  input:focus{
-  font-size: 2rem;
-  background-color: #c8ced9;
-  color: #5876a6;
-  border-radius: 1rem;
-  padding: 0.5rem 1.75rem;
-  transition: all .2s;
+  input:focus {
+    font-size: 2rem;
+    background-color: #c8ced9;
+    color: #5876a6;
+    border-radius: 1rem;
+    padding: 0.5rem 0.5rem;
+    transition: all .2s;
+}
+
+.toDoInput input[type=text] {
+  min-width: 30rem;
 }
 
 .toDoInput input[type=submit]:hover {
@@ -56,13 +60,6 @@ body {
   font-size: 1.5rem;
   text-align: center;
   padding: .75rem;
-}
-
-.listContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .toDoList {
@@ -87,4 +84,28 @@ a:hover {
 
 .footer {
   font-size: 1.5rem;
+}
+
+/* Autofill settings */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid #5876a6;
+  -webkit-text-fill-color: #5876a6;
+}
+
+@media (max-width: 540px) {
+  .toDoInput {
+    text-align: center;
+  }
+  .toDoInput input[type=text] {
+    min-width: 0;
+    margin-bottom: 1rem;
+  }
 }
