@@ -51,7 +51,7 @@ const removeListItem = (event) => {
     let listItem = event.target.innerText;
     savedToDoList = savedToDoList.filter(item => item !== listItem);
     listItemLink.parentElement.remove();
-  }.bind(this), 500)
+  }.bind(this), 1000)
 
   event.preventDefault();
 
