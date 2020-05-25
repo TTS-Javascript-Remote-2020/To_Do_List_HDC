@@ -70,16 +70,29 @@ body {
 
 .toDoItem {
   margin-bottom: 1.75rem;
+  /* Using background to strikethrough. Didn't like as much. */
+  /* background: linear-gradient(to left, #5876a6 50%, #c8ced9 50%);
+  background-size: 200% 100%;
+  background-position:right bottom;
+  margin-left:10px; */
+  transition:all 1s ease;
 }
 
+.toDoItem:hover {
+  font-size: 3rem;
+  /* background-position:left bottom; */
+}
 
 .toDoItemLink {
   text-decoration: none;
   color: inherit;
 }
 
-a:hover {
-  font-size: 3rem;
+.toDoItemCompleted,
+  .toDoItemCompleted:hover {
+    text-decoration: line-through;
+    -webkit-animation: slideOut 1s linear;
+    animation: slideOut 1s linear;
 }
 
 .footer {
@@ -107,5 +120,25 @@ select:-webkit-autofill:focus {
   .toDoInput input[type=text] {
     min-width: 0;
     margin-bottom: 1rem;
+  }
+}
+
+@-webkit-keyframes slideOut {
+  0% {
+    transform: scaleY(2);
+  }
+
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: scaleY(2);
+  }
+
+  100% {
+    transform: scaleY(0);
   }
 }

@@ -27,14 +27,20 @@ const newListItem = (item, onLoad = false) => {
   let newListItem = document.createElement('li');
   newListItem.className = 'toDoItem';
 
+  // let newListItemSpan = document.createElement('span');
+  // newListItemSpan.className = 'toDoItemSpan';
+
   let newListItemLink = document.createElement('a');
   newListItemLink.className = "toDoItemLink"
   newListItemLink.href = '#';
   newListItemLink.innerText = item;
   newListItemLink.onclick = removeListItem;
 
+  // newListItemSpan.appendChild(newListItemLink);
+  // newListItem.appendChild(newListItemSpan);
   newListItem.appendChild(newListItemLink);
   list.appendChild(newListItem);
+
 } else {
   showError(item);
 }
@@ -46,6 +52,7 @@ const addSavedToDoList = () => {
 
 const removeListItem = (event) => {
   let listItemLink = event.target;
+  listItemLink.parentElement.className = 'toDoItemCompleted';
   listItemLink.style.textDecoration = 'line-through';
   setTimeout(function () {
     let listItem = event.target.innerText;
